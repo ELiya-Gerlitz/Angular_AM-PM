@@ -57,5 +57,8 @@
 
 // List(the idea is a *ngFor="let p of products") (implements OnInit) +    // ng g s services/products  + //appConfig
 
+// Card.        props:  
+                // @Input()
+                //   public product : ProductsModel
 
-
+                // + in the List we added    :     <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>   || These are the props we have defined in the CARD.ts!!:      [product]="p"

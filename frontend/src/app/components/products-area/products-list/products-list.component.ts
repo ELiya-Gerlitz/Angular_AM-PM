@@ -11,7 +11,6 @@ import { ProductsServiceService } from 'src/app/services/products-service.servic
 export class ProductsListComponent implements OnInit {
 
 public products : ProductModel[]
-// <span *ngFor="let p of products">{p.name}</span>
 
 public constructor( private productsService : ProductsServiceService) {}
 
