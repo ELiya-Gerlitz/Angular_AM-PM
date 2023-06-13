@@ -4,6 +4,15 @@ import ProductModel from "../4-Models/ProductModel";
 import OkPacket from "mysql"
 
 
+
+async function getAllProducts():Promise<ProductModel[]>{
+    const sql = `
+    SELECT * FROM products
+    `
+    const products = await dal.execute(sql)
+    return products
+}
+
 async function getAllCatergories():Promise<CatrgoryModel[]>{
     const sql = `
     SELECT * FROM categories
@@ -50,6 +59,7 @@ async function deleteOneProduct(productId :number):Promise<void>{
 
 
 export default {
+    getAllProducts,
     getAllCatergories,
     getProductsByCategoryId,
     postOneProduct,

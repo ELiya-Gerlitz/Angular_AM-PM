@@ -1,0 +1,13 @@
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    font-family: 'Rubik Spray Paint', cursive;
+}
+
+.cool {
+    color: green;
+    font-weight: bold;
+    font-family: Arial;
+}

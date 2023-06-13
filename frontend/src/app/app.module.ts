@@ -3,18 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutComponent } from './components/layout-area/layout/layout.component';
-import { ListComponent } from './products-area/list/list.component';
-import { ProductsListComponent } from './products-area/products-list/products-list.component';
+import { HeaderComponent } from './components/layout-area/header/header.component';
+import { FooterComponent } from './components/layout-area/footer/footer.component';
+import { PageNotFoundComponent } from './components/layout-area/page-not-found/page-not-found.component';
+import { AsideComponent } from './components/layout-area/aside/aside.component';
+import { HomeComponent } from './components/layout-area/home/home.component';
+import { ProductsListComponent } from './components/products-area/products-list/products-list.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AddProductComponent } from './components/products-area/add-product/add-product.component';
+import { ProductCardComponent } from './components/products-area/product-card/product-card.component';
+import { VideoComponent } from './components/layout-area/video/video.component';
 
 @NgModule({
   declarations: [
     LayoutComponent,
-    ListComponent,
-    ProductsListComponent
+    HeaderComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+    AsideComponent,
+    HomeComponent,
+    ProductsListComponent,
+    AddProductComponent,
+    ProductCardComponent,
+    VideoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [LayoutComponent],
