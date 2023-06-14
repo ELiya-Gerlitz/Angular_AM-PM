@@ -1,17 +1,18 @@
-<div class = "card" >
+<div class = "card" *ngIf="product">
     <img src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
     <div class="card-content">
       <h2>
        {{product.name}}
       </h2>
       <p>
+       ID: <strong>{{product.productId}}</strong><br>
         {{product.dateTime}}
       </p>
-      <a href="#" class="button">
-        Find out more 
+      <button class="delete-button" (click)="deleteItem(product.productId)">
+        Delete Item ❌
         <span class="material-symbols-outlined">
           arrow_right_alt
         </span>
-      </a>
+      </button>
     </div>
   </div>

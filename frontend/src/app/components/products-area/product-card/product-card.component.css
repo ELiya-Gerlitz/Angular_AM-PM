@@ -6,6 +6,9 @@ main {
     padding: 50px;
     font-family: "Roboto", sans-serif;
   }
+  strong {
+    color: darkblue;
+  }
   
   .card {
     position: relative;
@@ -39,7 +42,8 @@ main {
     text-transform: uppercase;
   }
   .card p,
-  .card a {
+  .card a ,
+  .card button {
     position: absolute;
     opacity: 0;
     max-width: 80%;
@@ -48,16 +52,18 @@ main {
   .card p {
     inset: auto auto 80px 30px;
   }
-  .card a {
+  .card a ,
+  .card button{
     inset: auto auto 40px 30px;
     color: inherit;
     text-decoration: none;
   }
+  
   .card:hover h2 {
     inset: auto auto 220px 30px;
     transition: inset 0.3s ease-out;
   }
-  .card:hover p, .card:hover a {
+  .card:hover p, .card:hover a , .card:hover button{
     opacity: 1;
     transition: opacity 0.5s 0.1s ease-in;
   }
@@ -68,4 +74,13 @@ main {
   
   .material-symbols-outlined {
     vertical-align: middle;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+
+  .card button:hover {
+cursor: pointer;
   }

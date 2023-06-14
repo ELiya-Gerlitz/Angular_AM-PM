@@ -19,7 +19,6 @@ export class ProductsServiceService {
     return products
 }
 
-
 public async getAllCategories(): Promise<CatrgoryModel[]> {
   const observable = this.http.get<CatrgoryModel[]>(appConfig.categoriesUrl)
   const categories =  await firstValueFrom(observable)
@@ -31,6 +30,12 @@ public async getProdByCategoryId( categId :number): Promise<ProductModel[]> {
   const prods =  await firstValueFrom(observable)
   return prods
 }
+
+public async deleteItem( prodId :number): Promise<void> {
+  const observable = this.http.delete<void>(appConfig.productsUrl + prodId)
+  const prods =  await firstValueFrom(observable) //this line is a MUST!!!!!! Does NOT work otherwise!
+}
+
 
 }
 

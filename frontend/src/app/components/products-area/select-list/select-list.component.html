@@ -4,6 +4,8 @@
            <option *ngFor="let c of categories" value={{c.categoryId}}>{{c.categoryName}}</option> 
 </select>
 
-<div *ngIf="products?.length">
+
+<!-- <div *ngIf="products && products.length > 0"></div> -->
+<div *ngIf="products?.length" class="wrap">
     <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
 </div>
