@@ -35,7 +35,10 @@ public async deleteItem( prodId :number): Promise<void> {
   const observable = this.http.delete<void>(appConfig.productsUrl + prodId)
   const prods =  await firstValueFrom(observable) //this line is a MUST!!!!!! Does NOT work otherwise!
 }
-
+public async addProduct( product : ProductModel): Promise<void> {
+  const observable = this.http.post<void>(appConfig.productsUrl, product)
+  const prod =  await firstValueFrom(observable) //this line is a MUST!!!!!! Does NOT work otherwise!
+}
 
 }
 

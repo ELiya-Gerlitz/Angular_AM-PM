@@ -1,1 +1,29 @@
 <p>add-product works!</p>
+
+<!-- <form (ngSubmit)="send()"  ngNativeValidate> -->
+    <div class="box flex">
+        <form name="addForm" (ngSubmit)="send()" ngNativeValidate>
+            <!-- name -->
+            <label for="">Product Name:</label>
+            <input name="name" type="text" [(ngModel)]="product.name" required>&nbsp;
+            <!-- date&time -->
+            <label for="">Date & Time:</label>
+            <input name="dateTime" type="datetime-local" [(ngModel)]="product.dateTime" required>&nbsp;
+            <!-- expiration -->
+            <label for="">Expiration:</label>
+            <input name="expirationDateTime" type="datetime-local" [(ngModel)]="product.expirationDateTime" required>&nbsp;
+            <!-- price -->
+            <label for="">Price:</label>&nbsp;
+            <input name="price" type="number" [(ngModel)]="product.price" required min="1">
+            <!-- categoryId -->
+            <label for="">Category:</label>
+                <select name="categoryId" [(ngModel)]="product.categoryId" required>
+                    <option disabled value="">select a category name </option>
+                        <option *ngFor="let c of categories" value={{c.categoryId}}>{{c.categoryName}}</option> 
+                </select>
+
+                
+                <button>send</button>
+            
+        </form>
+</div>
