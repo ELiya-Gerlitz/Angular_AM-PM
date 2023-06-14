@@ -1,12 +1,8 @@
 <p>products-list works!</p>
     <div>
-        Do you really work?
-        <span *ngFor="let p of products">{{p.name}} &nbsp; | </span> 
-
-
+        <!-- <span *ngFor="let p of products">{{p.name}} &nbsp; | </span>  -->
         <div class="äussereVerkleiner">
             <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
         </div>
-       
     </div>
 

@@ -5,10 +5,12 @@ import { PageNotFoundComponent } from './components/layout-area/page-not-found/p
 import { ProductsListComponent } from './components/products-area/products-list/products-list.component';
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 import { VideoComponent } from './components/layout-area/video/video.component';
+import { SelectListComponent } from './components/products-area/select-list/select-list.component';
 
 const routes: Routes = [
   {path : "home", component : HomeComponent},
   {path : "products-listing", component : ProductsListComponent},
+  {path : "select-products-list", component : SelectListComponent},
   {path : "add", component : AddProductComponent},
   {path : "video", component : VideoComponent},
 

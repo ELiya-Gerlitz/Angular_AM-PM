@@ -22,9 +22,5 @@ public constructor( private productsService : ProductsServiceService) {}
     }catch(err:any){
       console.log(err)
     }
-
   }
-
-
-
 }

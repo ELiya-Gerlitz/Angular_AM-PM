@@ -6,8 +6,9 @@ import OkPacket from "mysql"
 
 
 async function getAllProducts():Promise<ProductModel[]>{
+    // CONCAT(DATE_FORMAT(M.startDate, '%d.%m.%Y') , ' ' ,TIME_FORMAT(M.startDate, '%H:%i')) AS 'startDate',
     const sql = `
-    SELECT * FROM products
+    SELECT * FROM products 
     `
     const products = await dal.execute(sql)
     return products
@@ -55,6 +56,24 @@ async function deleteOneProduct(productId :number):Promise<void>{
     const info : OkPacket = await dal.execute(sql, [productId])
     //if(info.affectedRows === 0) throw new ErrorModel...
 }
+
+// async function getMeetingByDevTeam(devTeamID:number): Promise<MeetingModel[]> {
+//     const sql = `SELECT M.meetID, M.devTeamID, CONCAT(DATE_FORMAT(M.startDate, '%d.%m.%Y') , ' ' ,TIME_FORMAT(M.startDate, '%H:%i')) AS 'startDate',
+//                 CONCAT(DATE_FORMAT(M.endDate, '%d.%m.%Y') , ' ' ,TIME_FORMAT(M.endDate, '%H:%i')) AS 'endDate', M.meetDescription, M.meetRoom, D.devTeamName
+//                 FROM meetings AS M JOIN devteams AS D
+//                 ON M.devTeamID = D.devTeamID
+//                 WHERE M.devTeamID = ?`
+//     const meetings = await dal.execute(sql, [devTeamID])
+//     return meetings    
+// }
+
+// async function isTimeBusy(startDate:string, devTeamID: number):Promise<Boolean> {
+//     const sql = `SELECT COUNT(*) AS isTime FROM meetings
+//                 WHERE startDate = ? AND devTeamID = ?`
+//     const info = await dal.execute(sql, [startDate, devTeamID])
+//     const count = info[0].isTime
+//     return count > 0     
+// }
 
 
 

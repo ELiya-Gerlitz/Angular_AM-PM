@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 import { ProductCardComponent } from './components/products-area/product-card/product-card.component';
 import { VideoComponent } from './components/layout-area/video/video.component';
+import { SelectListComponent } from './components/products-area/select-list/select-list.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { VideoComponent } from './components/layout-area/video/video.component';
     AddProductComponent,
     ProductCardComponent,
     VideoComponent,
+    SelectListComponent,
   ],
   imports: [
     BrowserModule,
