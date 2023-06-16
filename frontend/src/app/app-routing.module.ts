@@ -6,12 +6,14 @@ import { ProductsListComponent } from './components/products-area/products-list/
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 import { VideoComponent } from './components/layout-area/video/video.component';
 import { SelectListComponent } from './components/products-area/select-list/select-list.component';
+import { AddValidationComponent } from './components/products-area/add-validation/add-validation.component';
 
 const routes: Routes = [
   {path : "home", component : HomeComponent},
   {path : "products-listing", component : ProductsListComponent},
   {path : "select-products-list", component : SelectListComponent},
   {path : "add", component : AddProductComponent},
+  {path : "add-with-validation", component : AddValidationComponent},
   {path : "video", component : VideoComponent},
 
   {path: "", redirectTo: "/home", pathMatch: "full" }, // pathMatch: "full" --> exact empty string,

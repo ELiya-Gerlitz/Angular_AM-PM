@@ -1,0 +1,51 @@
+<p>add-validation works!</p>
+<div class="box">
+
+    <h2>Add Product</h2>
+
+    <!-- <form (ngSubmit)="send()" ngNativeValidate> -->
+    <form (ngSubmit)="send()" #productForm="ngForm">
+
+        <label>Name: </label>
+        <input type="text" name="name" [(ngModel)]="product.name" #nameBox="ngModel" required minlength="2">
+        <span class="err" *ngIf="nameBox.errors?.['required'] && nameBox.touched">Missing name</span>
+        <span class="err" *ngIf="nameBox.errors?.['minlength'] && nameBox.touched">Name must exceed 2 chars</span>
+
+        <label>Price: </label>
+        <input type="number" name="price" [(ngModel)]="product.price" #priceBox="ngModel" required min="0" max="1000">
+        <span class="err" *ngIf="priceBox.errors?.['required'] && priceBox.touched">Missing price</span>
+        <span class="err" *ngIf="priceBox.errors?.['min'] && priceBox.touched">Price can't be negative</span>
+        <span class="err" *ngIf="priceBox.errors?.['max'] && priceBox.touched">Price can't exceed 1000</span>
+
+        <label>dateTime: </label>
+        <input type="datetime-local" name="dateTime" [(ngModel)]="product.dateTime" #dateTime="ngModel" required min="0" max="1000">
+        <span class="err" *ngIf="dateTime.errors?.['required'] && dateTime.touched">Missing stock</span>
+        <span class="err" *ngIf="dateTime.errors?.['min'] && dateTime.touched">Stock can't be negative</span>
+        <span class="err" *ngIf="dateTime.errors?.['max'] && dateTime.touched">Stock can't exceed 1000</span>
+
+
+        <label>expiration </label>
+        <input type="datetime-local" name="expirationDateTime" [(ngModel)]="product.expirationDateTime" #expirationDateTime="ngModel" required min="0" max="1000">
+        <span class="err" *ngIf="expirationDateTime.errors?.['required'] && expirationDateTime.touched">Missing stock</span>
+        <span class="err" *ngIf="expirationDateTime.errors?.['min'] && expirationDateTime.touched">Stock can't be negative</span>
+        <span class="err" *ngIf="expirationDateTime.errors?.['max'] && expirationDateTime.touched">Stock can't exceed 1000</span>
+
+
+        <label for="">Category:</label>
+        <select name="categoryId" [(ngModel)]="product.categoryId" #categoryId="ngModel" required min="0" max="1000">
+            <option disabled value="">select a category name </option>
+                <option *ngFor="let c of categories" value={{c.categoryId}}>{{c.categoryName}}</option> 
+        </select>
+        <span class="err" *ngIf="categoryId.errors?.['required'] && categoryId.touched">Missing stock</span>
+        <span class="err" *ngIf="categoryId.errors?.['min'] && categoryId.touched">Stock can't be negative</span>
+        <span class="err" *ngIf="categoryId.errors?.['max'] && categoryId.touched">Stock can't exceed 1000</span>
+        <!-- <label>Image: </label>
+        <input type="file" accept="image/*" name="image" [(ngModel)]="product.image" #productImage #imageBox="ngModel" required>
+        <span class="err" *ngIf="imageBox.errors?.['required'] && imageBox.touched">Missing image</span> -->
+
+        <button [disabled]="productForm.invalid">Add</button>
+
+    </form>
+
+</div>
+

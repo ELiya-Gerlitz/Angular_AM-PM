@@ -6,7 +6,8 @@
       </h2>
       <p>
        ID: <strong>{{product.productId}}</strong><br>
-        {{product.dateTime}}
+        {{product.dateTime  | date:"dd/MM/yyyy HH:mm"}}
+        Price: {{product.price | currency:'ILS'}}
       </p>
       <button class="delete-button" (click)="deleteItem(product.productId)">
         Delete Item ❌
