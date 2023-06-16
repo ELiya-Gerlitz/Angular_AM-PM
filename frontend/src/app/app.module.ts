@@ -17,6 +17,7 @@ import { ProductCardComponent } from './components/products-area/product-card/pr
 import { VideoComponent } from './components/layout-area/video/video.component';
 import { SelectListComponent } from './components/products-area/select-list/select-list.component';
 import { AddValidationComponent } from './components/products-area/add-validation/add-validation.component';
+import { ProdTableListComponent } from './components/products-area/prod-table-list/prod-table-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddValidationComponent } from './components/products-area/add-validatio
     ProductCardComponent,
     VideoComponent,
     SelectListComponent,
-    AddValidationComponent
+    AddValidationComponent,
+    ProdTableListComponent
   ],
   imports: [
     BrowserModule,
